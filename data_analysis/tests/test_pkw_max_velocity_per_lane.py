@@ -1,6 +1,7 @@
 import pytest
 
 from pipelines.transform import pkw_max_velocity_per_lane, lkw_ratio, lane_2_min_mean_velocity_100_cars
+# the old solutions got full points, but not very elegant, so we can use them to test our refactored code
 import _old_solutions
 
 from isda_streaming.data_stream import KeyedStream, TimedStream
