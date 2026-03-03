@@ -42,3 +42,25 @@ def _count_lkw_count_all(stream_element_1: tuple, stream_element_2: tuple) -> tu
 def _cal_percent(stream_element: tuple) -> tuple:
     percent = (stream_element[0] / stream_element[1]) * 100
     return round(percent, 2)
+# -----------------------------------------------------------------------------
+def _filter_lane_2(stream_element: tuple) -> bool:
+    if stream_element[0] == 2.0:
+        return True
+    return False
+def _cal_mean_velocity(x):
+    car_list = []
+    for i in range(100):
+        car_list.append(x[i][1])
+    sum_vel = 0.0
+    x = 0
+    y = 10
+    mean_list =[]
+    while y<=100:
+        sum_vel = 0.0
+        for i in range(x,y):
+            sum_vel = sum_vel + car_list[i]
+        
+        mean_list.append(sum_vel/10)
+        x = x +10
+        y = y +10
+    return min(mean_list)
